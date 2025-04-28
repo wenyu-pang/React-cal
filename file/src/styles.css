@@ -1,0 +1,48 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    justify-content: center;/*make cal go to the center*/
+}
+body{
+    margin:0;
+    background:linear-gradient(to left,rgb(102, 206, 102),rgb(115, 115, 207))
+}
+.calculator-grid{
+    display: grid;
+    margin-top:2rem;
+    grid-template-columns:repeat(4,6rem);
+    grid-template-rows:minmax(7rem,auto)repeat(5,6rem);
+}
+.calculator-grid>button{
+    cursor:pointer;/* make the mouse change to hand mod you can use the button*/
+    font-size:2rem;
+    border:1px solid white;
+    outline:none;
+    background-color: rgba(170, 227, 231, 0.75);
+
+}
+.calculator-grid> button:hover,
+.calculator-grid> button:focus{
+    background-color: rgba(255,255,255,.9);
+}/*when you click the button it change to the white color*/
+.spantwo{
+    grid-column:span 2;
+}
+.output{
+    grid-column:1/-1;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.output .previous-operand{
+    color:rgba(255,255,255,.75);
+    font-size:1.5;
+}
+.output .current-operand{
+    color:white;
+    font-size: 2.5rem;
+}
